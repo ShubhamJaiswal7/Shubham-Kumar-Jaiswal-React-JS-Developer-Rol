@@ -188,56 +188,13 @@ The app integrates with [FakeStore API](https://fakestoreapi.com/products) to di
 - **Forms**: React Hook Form with Zod validation
 - **Animations**: Tailwind CSS animations
 
-## 🚀 Deployment
 
-### Build for Production
-```bash
-npm run build
-```
-
-### Preview Production Build
-```bash
-npm run preview
-```
 
 ### Deploy to Vercel
 1. Install Vercel CLI: `npm i -g vercel`
 2. Run: `vercel`
 3. Follow the prompts to deploy
 
-### Deploy to Netlify
-1. Build the project: `npm run build`
-2. Upload the `dist` folder to Netlify
-3. Configure build settings if needed
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature-name`
-3. Make your changes
-4. Run tests: `npm run lint`
-5. Commit your changes: `git commit -m 'Add feature'`
-6. Push to the branch: `git push origin feature-name`
-7. Submit a pull request
-
-
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-**Theme not persisting after refresh**
-- Check if localStorage is enabled in your browser
-- Verify the theme key in localStorage: `themeflex-theme`
-
-**Products not loading**
-- Check your internet connection
-- Verify the FakeStore API is accessible
-- Check browser console for CORS errors
-
-**Build errors**
-- Clear node_modules and reinstall: `rm -rf node_modules && npm install`
-- Check TypeScript errors: `npm run lint`
 
 ### Performance Tips
 
