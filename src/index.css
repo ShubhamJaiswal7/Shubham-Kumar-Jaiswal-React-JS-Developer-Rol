@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ThemeFlex Design System - Dynamic Multi-Theme Variables */
+
+@layer base {
+  :root {
+    /* Theme 1: Minimalist Light */
+    --theme1-bg: 0 0% 99%;
+    --theme1-surface: 0 0% 100%;
+    --theme1-primary: 220 70% 50%;
+    --theme1-primary-fg: 0 0% 100%;
+    --theme1-text: 220 20% 15%;
+    --theme1-text-muted: 220 15% 45%;
+    --theme1-border: 220 13% 91%;
+    --theme1-accent: 220 90% 95%;
+    
+    /* Theme 2: Professional Dark */
+    --theme2-bg: 220 27% 8%;
+    --theme2-surface: 220 25% 12%;
+    --theme2-sidebar: 220 28% 10%;
+    --theme2-primary: 210 90% 65%;
+    --theme2-primary-fg: 220 27% 8%;
+    --theme2-text: 220 20% 95%;
+    --theme2-text-muted: 220 15% 70%;
+    --theme2-border: 220 25% 20%;
+    --theme2-accent: 210 90% 15%;
+    
+    /* Theme 3: Colorful Creative */
+    --theme3-bg: 290 50% 98%;
+    --theme3-surface: 0 0% 100%;
+    --theme3-primary: 280 90% 60%;
+    --theme3-secondary: 200 90% 60%;
+    --theme3-accent: 50 90% 65%;
+    --theme3-success: 140 70% 55%;
+    --theme3-text: 270 30% 20%;
+    --theme3-text-muted: 270 20% 50%;
+    --theme3-border: 280 30% 85%;
+    --theme3-gradient: linear-gradient(135deg, hsl(280 90% 60%), hsl(200 90% 60%));
+    --theme3-card-gradient: linear-gradient(145deg, hsl(0 0% 100%), hsl(280 30% 98%));
+
+    /* Default theme variables */
+    --background: var(--theme1-bg);
+    --foreground: var(--theme1-text);
+    --card: var(--theme1-surface);
+    --card-foreground: var(--theme1-text);
+    --primary: var(--theme1-primary);
+    --primary-foreground: var(--theme1-primary-fg);
+    --secondary: var(--theme1-accent);
+    --secondary-foreground: var(--theme1-text);
+    --muted: var(--theme1-border);
+    --muted-foreground: var(--theme1-text-muted);
+    --border: var(--theme1-border);
+    --radius: 0.75rem;
+    
+    /* Animation variables */
+    --theme-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Theme classes for dynamic switching */
+  .theme-1 {
+    --background: var(--theme1-bg);
+    --foreground: var(--theme1-text);
+    --card: var(--theme1-surface);
+    --card-foreground: var(--theme1-text);
+    --primary: var(--theme1-primary);
+    --primary-foreground: var(--theme1-primary-fg);
+    --secondary: var(--theme1-accent);
+    --secondary-foreground: var(--theme1-text);
+    --muted: var(--theme1-border);
+    --muted-foreground: var(--theme1-text-muted);
+    --border: var(--theme1-border);
+  }
+
+  .theme-2 {
+    --background: var(--theme2-bg);
+    --foreground: var(--theme2-text);
+    --card: var(--theme2-surface);
+    --card-foreground: var(--theme2-text);
+    --primary: var(--theme2-primary);
+    --primary-foreground: var(--theme2-primary-fg);
+    --secondary: var(--theme2-accent);
+    --secondary-foreground: var(--theme2-text);
+    --muted: var(--theme2-border);
+    --muted-foreground: var(--theme2-text-muted);
+    --border: var(--theme2-border);
+  }
+
+  .theme-3 {
+    --background: var(--theme3-bg);
+    --foreground: var(--theme3-text);
+    --card: var(--theme3-surface);
+    --card-foreground: var(--theme3-text);
+    --primary: var(--theme3-primary);
+    --primary-foreground: var(--theme3-primary-fg);
+    --secondary: var(--theme3-accent);
+    --secondary-foreground: var(--theme3-text);
+    --muted: var(--theme3-border);
+    --muted-foreground: var(--theme3-text-muted);
+    --border: var(--theme3-border);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    transition: var(--theme-transition);
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* Theme-specific typography */
+  .theme-1 * {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .theme-2 * {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .theme-2 h1, .theme-2 h2, .theme-2 h3 {
+    font-weight: 700;
+  }
+
+  .theme-3 * {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .theme-3 h1, .theme-3 h2, .theme-3 h3 {
+    font-family: 'Pacifico', cursive;
+    font-weight: 400;
+  }
+
+  /* Custom animations */
+  .theme-fade-in {
+    animation: fadeIn 0.4s ease-out;
+  }
+
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+
+  .theme-3 .glow-effect {
+    box-shadow: 0 0 30px hsl(var(--theme3-primary) / 0.4);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Enhanced scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.8);
+  }
+
+  /* Gradient text effect for theme 3 */
+  .theme-3 .gradient-text {
+    background: var(--theme3-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glass effect */
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .theme-2 .glass-effect {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
