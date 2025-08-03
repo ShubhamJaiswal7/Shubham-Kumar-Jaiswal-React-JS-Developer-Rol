@@ -1,4 +1,4 @@
-# Folio Theme Flex - React TypeScript Theme Switcher
+# Theme Flex - React TypeScript Theme Switcher
 
 A modern React application built with TypeScript that demonstrates dynamic theme switching with three distinct visual themes. The app features a responsive design, product catalog integration, and smooth theme transitions.
 
